@@ -3,6 +3,7 @@ medium = document.getElementById("medium");
 hard = document.getElementById("hard");
 let rand;
 let hscore = { easy: 0, medium: 0, hard: 0 };
+localStorage.setitem("Highscore",JSON.stringify(hscore));
 update();
 let score=document.getElementById('score');
 document.getElementById("easy").addEventListener("click", function () {
