@@ -1,98 +1,131 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
+    box-sizing: border-box;
     font-family: 'Architects Daughter', cursive;
 }
-.background{
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
     height: 100vh;
-    /* width: 100vw; */
-    background: url('714548.png');
-    background-clip: content-box;
-    background-repeat: no-repeat;
-    background-size: cover;
+    overflow: hidden;
+}
+
+img {
+    position: absolute;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.background {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
     opacity: 0.8;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow-x: hidden;
-    overflow-x: clip;
 }
-.heading{
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2.5px solid white;
     border-radius: 3rem;
-    height: 4rem;
-    width: 33rem;
+    padding: 7px;
+    min-width: 200px;
     background: black;
     color: white;
-    font-size: 3rem;
+    font-size: 25px;
     text-align: center;
-    margin-top: -5rem;
-    /* margin-bottom: 2rem; */
 }
-.icon{
+
+.icon {
     font-size: 2rem;
     margin: 10px;
-    animation:rotate 5s infinite linear;
+    animation: rotate 5s infinite linear;
 }
+
 @keyframes rotate {
-    0%{
+    0% {
         color: blue;
         transform: rotate(0deg);
     }
-    25%{
+
+    20% {
         color: purple;
-        transform: rotate(90deg);
+        transform: rotate(72deg);
     }
-    50%{
+
+    40% {
         color: yellow;
-        transform: rotate(180deg);
+        transform: rotate(144deg);
     }
-    75%{
+
+    60% {
         color: red;
-        transform: rotate(270deg);
+        transform: rotate(216deg);
     }
-    100%{
+
+    80% {
         color: slateblue;
+        transform: rotate(288deg);
+    }
+
+    100% {
+        color: blue;
         transform: rotate(360deg);
     }
 }
-.level{  
-    
+
+.level {
+
     display: flex;
     flex-direction: column;
     height: 20rem;
     width: 20rem;
     margin: 30px 0;
 }
-.button{
+
+.button {
     font-size: 2rem;
     height: 7rem;
-    margin: 3px;
+    margin: 5px;
     border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.208);
+    transition: all 0.2s ease;
 }
-.button:hover{
+
+.button:hover {
     cursor: pointer;
+    font-size: 2.5rem;
 }
-.easy{
-    background-color: rgba(255, 255, 255, .15);  
+
+.easy {
     backdrop-filter: blur(5px);
     /* background-color:greenyellow; */
 }
-.medium{
-    background-color: rgba(255, 255, 255, .15);  
- backdrop-filter: blur(5px);
+
+.medium {
+    backdrop-filter: blur(5px);
     /* background-color: yellow; */
 }
-.hard{
-    background-color: rgba(255, 255, 255, .15);  
+
+.hard {
     backdrop-filter: blur(5px);
     /* background-color: red; */
 }
-#screen{
-    background-color: rgba(255, 255, 255, .15);  
+
+#screen {
+    background-color: rgba(255, 255, 255, .15);
     backdrop-filter: blur(5px);
     border-radius: 50px;
     display: none;
@@ -101,7 +134,8 @@
     /* border: 2px solid white; */
     padding: 10px;
 }
-.head{
+
+.head {
     /* border: 2px solid black; */
     border-radius: 20px;
     width: 35rem;
@@ -112,8 +146,9 @@
     font-weight: bolder;
     font-size: 2rem;
 }
-#guess{
-    background-color: rgba(255, 255, 255, .15);  
+
+#guess {
+    background-color: rgba(255, 255, 255, .15);
     backdrop-filter: blur(5px);
     border: 2px solid black;
     border-radius: 10px;
@@ -125,8 +160,9 @@
     height: 2rem;
     text-align: center;
 }
-#sub{
-    background-color: rgba(255, 255, 255, .15);  
+
+#sub {
+    background-color: rgba(255, 255, 255, .15);
     backdrop-filter: blur(5px);
     border: 2px solid black;
     border-radius: 10px;
@@ -137,7 +173,8 @@
     margin: auto;
     margin-top: 20px;
 }
-.hint{
+
+.hint {
     /* background-color: rgba(255, 255, 255, .15);  
     backdrop-filter: blur(5px); */
     display: block;
@@ -150,7 +187,8 @@
     text-align: center;
     margin-top: 20px;
 }
-#score{
+
+#score {
     /* background: white; */
     /* border: 2px solid black; */
     font-weight: bolder;
@@ -159,12 +197,13 @@
     /* width: 20rem; */
     position: relative;
     text-align: center;
-    top:4rem;
+    top: 4rem;
     right: -8rem;
 }
-#hscoreee{
+
+#hscoreee {
     display: none;
-    border:2px solid black;
+    border: 2px solid black;
     border-radius: 20px;
     width: auto;
     height: auto;
@@ -177,52 +216,52 @@
     top: 1rem;
     right: 3rem; */
     /* background-color: floralwhite; */
-    background-color: rgba(255, 255, 255, .15);  
+    background-color: rgba(255, 255, 255, .15);
     backdrop-filter: blur(4.5px);
 }
 
 /* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-
-}
+@media (max-width: 1199.98px) {}
 
 /* Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) {
-
-}
+@media (max-width: 991.98px) {}
 
 /* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {
-
-}
+@media (max-width: 767.98px) {}
 
 @media (max-width: 575.98px) {
-    .heading{
-        font-size: 7vw;
-        width: 95%;
+    .heading {
+        font-size: 5vw;
+        width: 85%
     }
-    .button{
+
+    .button {
         width: 80%;
     }
-    .level{
+
+    .level {
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 50vh;
     }
-    #screen{
+
+    #screen {
         width: 90%;
         border-radius: 25px;
     }
-    .head{
+
+    .head {
         max-width: 100%;
     }
-    #score{
+
+    #score {
         position: relative;
         top: 0;
         left: 0;
     }
-    .hint{
+
+    .hint {
         font-size: 1.5rem;
     }
 }
